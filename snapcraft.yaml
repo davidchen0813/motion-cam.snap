@@ -1,0 +1,21 @@
+name: motion-cam
+version: 1.1
+vendor: David Chen <david.chen@canonical.com>
+summary: Motion camera to detect movement and take photos
+description: Webcam detects motion movement and take photos
+icon: icon.png
+
+binaries:
+    motion:
+       exec: usr/bin/motiond
+parts:
+    motion:
+       plugin: nil
+       stage-packages:
+            - motion
+    move:
+       plugin: copy
+       files:
+         motion.conf: etc/motion.conf
+         motiond: usr/bin/motiond
+           

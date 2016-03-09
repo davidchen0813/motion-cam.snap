@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+export SNAP_APP_PATH="/apps/motion-cam.davidchen/current"
+export SNAP_APP_DATA_PATH="/var/lib/apps/motion-cam.davidchen/current"
+export LD_LIBRARY_PATH="$SNAP_APP_PATH/lib:$SNAP_APP_PATH/usr/lib:$SNAP_APP_PATH/lib/x86_64-linux-gnu:$SNAP_APP_PATH/usr/lib/x86_64-linux-gnu:$SNAP_APP_PATH/usr/lib/x86_64-linux-gnu/pulseaudio:LD_LIBRARY_PATH"
+
+$SNAP_APP_PATH/usr/bin/motion -c $SNAP_APP_PATH/etc/motion.conf
